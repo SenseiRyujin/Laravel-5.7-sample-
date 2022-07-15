@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
+        "laravel-frontend-presets/material-dashboard": "1.0.5",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0"
     },
@@ -36,6 +37,7 @@
     },
     "autoload": {
         "psr-4": {
+            "LaravelFrontendPresets\\MaterialPreset\\": "presets/material/src",
             "App\\": "app/"
         },
         "classmap": [
@@ -45,6 +47,7 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "LaravelFrontendPresets\\MaterialPreset\\": "presets/material/src",
             "Tests\\": "tests/"
         }
     },

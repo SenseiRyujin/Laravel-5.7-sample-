@@ -12,12 +12,14 @@
   </div>
   <div class="card-body">
     @if ($errors->any())
+    <div x-data="{show: true}" x-init="setTimeout(() => show = false, 3000)" x-show="show">
       <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
               <li>{{ $error }}</li>
             @endforeach
         </ul>
+</div>
       </div><br />
     @endif
       <form method="post" action="{{ route('posts.update', $post->id) }}">

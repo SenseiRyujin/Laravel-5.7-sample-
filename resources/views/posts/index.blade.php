@@ -15,8 +15,10 @@
  
   <div class="card-body">
     @if(session()->get('success'))
+    <div x-data="{show: true}" x-init="setTimeout(() => show = false, 3000)" x-show="show">
     <div class="alert alert-success">
       {{ session()->get('success') }}  
+</div>
     </div><br />
   @endif
      <table class="table table-striped">
@@ -40,7 +42,7 @@
                 <form action="{{ route('posts.destroy', $post->id)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
+                  <button class="btn btn-danger" type="submit"onclick="return confirm('{{ __('Are you sure you want to delete?') }}')">Delete</button>
                 </form>
             </td>
         </tr>
